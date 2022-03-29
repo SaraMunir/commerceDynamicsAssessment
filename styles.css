@@ -37,6 +37,7 @@ nav {
 
 /* general rules */
 .wrapper {
+    max-width: 1200px;
     width: 90%;
     margin: 0 auto;
 }
@@ -65,6 +66,9 @@ nav {
 }
 .txtCenter {
     text-align: center;
+}
+.mr-auto {
+    margin: 0 auto;
 }
 /* navigation  */
 /* #9a9a9a
@@ -122,6 +126,12 @@ select {
 }
 .w-23{
     width: 23%;
+}
+.w-25{
+    width: 25%;
+}
+.w-30{
+    width: 30%;
 }
 /* buttons */
 
@@ -193,7 +203,7 @@ select {
 }
 .cardImg {
     width: 100%;
-    height: 200px;
+    height: 245px;
     object-fit: cover;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -213,7 +223,27 @@ select {
     margin-right: 20px;
 }
 .cardText{
-    padding: 10px;
+    padding: 15px;
+}
+.cardText h3 {
+    font-weight: 500;
+
+}
+.cardText2{
+    padding: 20px;
+}
+.cardText p {
+    color: #838485;
+    font-size: .9rem;
+}
+.cardText2 h3 {
+    margin: 10px;
+}
+.cardText2 p{
+    color: #838485;
+    font-size: .9rem;
+    padding: 10px 20px 20px;
+    line-height: 1.3rem;
 }
 /* header */
 header {
@@ -272,9 +302,95 @@ header h1 {
     min-height: 20vh;
     text-align: center;
 }
+.newsSect{
+    padding: 50px 0;
+}
+.newsSect h2 {
+    text-align: center;
+    margin: 35px auto;
+    font-size: 1.6rem;
+}
+.newsSect button {
+    width: 250px;
+    margin: 0 auto;
+    border: 2px solid #e63946;
+    color: #e63946;
+    background: none;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 50px auto;
+}
+
+.carNews {
+    width: 60%;
+}
+.carNews .card {
+    width: 45%;
+}
 
 .authorImg{
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    object-fit: cover;
+}
+.authorTxt{
+    font-weight: 700;
+    color: #cfcfcf;
+    padding-left: 5px;
+}
+hr {
+    border-bottom: 1px;
+    color: #cfcfcf6e;
+}
+/* contact */
+
+.contact {
+    background-color: #333333;
+    min-height: 40vh;
+    color: white;
+    padding: 40px 0;
+}
+.contact p {
+    margin: 10px 0;
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+.socialLinks {
+    margin: 20px 0;
+}
+.socialLinks a {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    color: white;
+    padding: 10px;
+    background-color: #535353;
+    margin: 0;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+}
+.subscribe input{
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    font-size: .8rem;
+}
+.subscribe button {
+    padding: 10px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* footer */
+footer {
+    background-color: #222222;
+    padding: 10px;
 }
