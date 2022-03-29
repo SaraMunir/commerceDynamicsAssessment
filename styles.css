@@ -41,6 +41,10 @@ nav {
 .hamburgerMenu button {
     color: white;
     font-size: 1.5rem;
+    transition: .4s;
+}
+.hamburgerMenu button:hover, .hamburgerMenu button:focus {
+    color: #e63946;
 }
 /* general rules */
 .wrapper {
@@ -115,6 +119,10 @@ nav {
     color: #eeeeee;
     border: none;
     border-left: 1px solid #545657 ;
+    transition: .4s;
+}
+.searchBtn:hover, .searchBtn:focus {
+    color: #e63946;
 }
 .searchCntr{
     width: 20%;
