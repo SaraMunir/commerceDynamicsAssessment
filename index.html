@@ -21,17 +21,33 @@
     <nav>
         <ul class="flexRow alignItmCntr jstfyContSpcBtn wrapper">
             <li><h3 class="logoSmall">TEST</h3></li>
-            <li class="linkContainer">
-                <ul class="flexRow jstfyContEnd alignItmCntr">
-                    <li><a class="navLink" href="#home">home</a></li>
-                    <li><a class="navLink" href="#features">features</a></li>
-                    <li><a class="navLink" href="#pages">pages</a></li>
-                    <li><a class="navLink" href="#blog">blog</a></li>
-                    <li><a class="navLink" href="#contact">contact</a></li>
-                    <li><a class="navLink login" href="#login">login</a></li>
+            <li>
+                <ul class="menu flexRow alignItmCntr hiddenMenu" id="menu">
+                    <li class="linkContainer">
+                        <ul class="flexRow jstfyContEnd alignItmCntr">
+                            <li class="flexRow jstfyContEnd w-100 menuCloseBtn"><button onclick="showMenu()"><i class="fas fa-times"></i></button></li>
+                            <li><a class="navLink" href="#home">home</a></li>
+                            <li><a class="navLink" href="#features">features</a></li>
+                            <li><a class="navLink" href="#pages">pages</a></li>
+                            <li><a class="navLink" href="#blog">blog</a></li>
+                            <li><a class="navLink" href="#contact">contact</a></li>
+                            <li><a class="navLink login" href="#login">login</a></li>
+                        </ul>
+                    </li>
+                    <li class="searchCntr">
+                        <form class="searchParnt flexRow" id="searchParnt">
+                            <input class="searchInput" type="text" id="searchInput" placeholder="search...">
+                            <button onclick="showSearchInput()"><i class="fas fa-times"></i></button>
+                        </form>
+                        <button class="searchBtn" onclick="showSearchInput()"><i class="fas fa-search"></i></button>
+                    </li>
                 </ul>
             </li>
-            <li class="searchCntr"><button class="searchBtn "><i class="fas fa-search"></i></button></li>
+            <li class="hamburgerMenu">
+                <button onclick="showMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </li>
         </ul>
     </nav>
     <header class="flexCol jstfyContEnd">
@@ -45,7 +61,7 @@
         </div>
     </header>
     <section class="filterOptions flexCol jstfyContCentr">
-        <form class="flexRow wrap wrapper jstfyContSpcBtn">
+        <form class="flexRow wrap wrapper jstfyContSpcBtn wrap">
             <div class="w-45">
                 <label class="sr-only" for="selectMake">Select Make</label>
                 <select name="cars">
@@ -95,11 +111,11 @@
                 </select>
             </div>
             <div class="w-45">
-                <button class="myBtn">SHOW RESULTS</button>
+                <button class="myBtn" disabled>SHOW RESULTS</button>
             </div>
         </form>
     </section>
-    <section >
+    <section class="results">
         <div class="wrapper flexRow jstfyContEnd alignItmCntr">
             <button class="sqrBtn2"><img src="./assets/grid.png" alt="star"></button>
             <button class="sqrBtn2"><img src="./assets/row.png" alt="star"></button>
@@ -110,7 +126,6 @@
                     <option value="high-low">Price (high-low)</option>
                 </select>
             </div>
-
         </div>
         <div class="carResults wrapper flexRow wrap jstfyContSpcBtn" id="cardResults">
             <div class="card">
@@ -150,14 +165,14 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper flexRow jstfyContCentr">
-            <button>1</button>
-            <button>2</button>
-            <button>-></button>
+        <div class="wrapper flexRow jstfyContCentr sliders">
+            <button onclick="showNext('firstSix')">1</button>
+            <button onclick="showNext('lastSix')">2</button>
+            <button disabled><i class="fas fa-arrow-right"></i></button>
         </div>
     </section>
     <section class="numbers flexCol jstfyContCentr">
-        <div class="flexRow wrapper">
+        <div class="flexRow wrapper wrap jstfyContCentr">
             <div class="w-23">
                 <h2>25</h2>
                 <p>Years In Business</p>
@@ -178,7 +193,7 @@
     </section>
     <section class="newsSect wrapper flexCol jstfyContCentr">
         <h2 >Latest Car News</h2>
-        <div class="carNews flexRow mr-auto">
+        <div class="carNews flexRow mr-auto wrap">
             <div class="card">
                 <div class="cardImgCntr">
                     <img class="cardImg" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&fit=crop" alt="car1">
@@ -211,8 +226,8 @@
         <button>submit your vehicle <i class="fas fa-arrow-right"></i></button>
     </section>
     <section class="contact">
-        <div class="wrapper flexRow jstfyContSpcBtn">
-            <div class="w-30">
+        <div class="wrapper flexRow wrap jstfyContSpcBtn contactColsCntr">
+            <div class="contactCols">
                 <h3>Card Dealer Inc.</h3>
                 <p>Address: 1 Fantasy Road, 10100 Car Haven, USA
                     <br> Phone: 0800 555 123 456
@@ -233,7 +248,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="w-30">
+            <div class="contactCols">
                 <h3>Opening Hours</h3>
                 <ul>
                     <li class="flexRow jstfyContSpcBtn">
@@ -259,7 +274,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="w-30">
+            <div class="contactCols">
                 <h3>Get the Best deals first</h3>
                 <form class="flexRow subscribe" >
                     <input type="text" type="email" placeholder="Your email address ...">

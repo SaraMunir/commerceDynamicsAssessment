@@ -120,108 +120,210 @@ const cars =[
         price: '39,000'
     }
 ]
-
+let carCopy = [...cars]
 $(document).ready(function(e){
     $('#cardResults').html('')
-    renderCars(cars)
+    renderCars(carCopy, 'firstSix')
 
 })
 const sortby =()=>{
     let type = document.querySelector('#priceRange').value
     // console.log(bbx)
     if(type==="low-high"){
-            let sortedArr = cars.sort((a,b)=>{ return a.price > b.price ? 1:-1 })
+            carCopy = cars.sort((a,b)=>{ return a.price > b.price ? 1:-1 })
             $('#cardResults').html('')
-            renderCars(sortedArr)
+            renderCars(carCopy, 'firstSix')
             
         }else{
             $('#cardResults').html('')
-            let sortedArr =cars.sort((a,b)=>{ return b.price > a.price? 1:-1 })
-            renderCars(sortedArr)
+            carCopy =cars.sort((a,b)=>{ return b.price > a.price? 1:-1 })
+            renderCars(carCopy, 'firstSix')
     }
 }
-const renderCars =(arr)=>{
-    arr.slice(0,6).forEach(car=>{
-        // console.log(car.name)
-        if(car.sold===false){
-            $('#cardResults').append(`
-            <div class="card">
-            <div class="cardImgCntr">
-            
-                <img class="cardImg" src=${car.images} alt="${car.name}">
-                <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
-                    <p>$${car.price}</p>
-                    <div class="flexRow jstfyContSpcBtn">
-                        <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
-                        <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="cardText">
-                <h3>${car.name}</h3>
-                <ul>
-                    <li class="flexRow">
-                        <img src="./assets/calendar.png" alt="calendar icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>${car.date}</p>
-                        </div>
-                    </li>
-                    <li class="flexRow">
-                        <img src="./assets/gauge.png" alt="gauge icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>${car.miles} miles</p>
-                        </div>
-                    </li>
-                    <li class="flexRow">
-                        <img src="./assets/heart-beat.png" alt="gauge icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>${car.power}</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        `)
-    }else{
-            $('#cardResults').append(`
-            <div class="card">
-            <div class="cardImgCntr">
-                <div class="banner"><p>Sold</p></div>
-                <img class="cardImg" src=${car.images} alt="${car.name}">
-                <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
-                    <p>$${car.price}</p>
-                    <div class="flexRow jstfyContSpcBtn">
-                        <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
-                        <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="cardText">
-                <h3>${car.name}</h3>
-                <ul>
-                    <li class="flexRow">
-                        <img src="./assets/calendar.png" alt="calendar icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>${car.date}</p>
-                        </div>
-                    </li>
-                    <li class="flexRow">
-                        <img src="./assets/gauge.png" alt="gauge icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>${car.miles} miles</p>
-                        </div>
-                    </li>
-                    <li class="flexRow">
-                        <img src="./assets/heart-beat.png" alt="gauge icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>${car.power}</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        `)
-        }
+const showNext=(arg)=>{
+    renderCars(carCopy, arg)
+}
+const renderCars =(arr, arg)=>{
+    $('#cardResults').html('')
 
-    })
+    if(arg==='firstSix'){
+        arr.slice(0,6).forEach(car=>{
+            // console.log(car.name)
+            if(car.sold===false){
+                $('#cardResults').append(`
+                <div class="card">
+                <div class="cardImgCntr">
+                
+                    <img class="cardImg" src=${car.images} alt="${car.name}">
+                    <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
+                        <p>$${car.price}</p>
+                        <div class="flexRow jstfyContSpcBtn">
+                            <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
+                            <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>${car.name}</h3>
+                    <ul>
+                        <li class="flexRow">
+                            <img src="./assets/calendar.png" alt="calendar icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.date}</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/gauge.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.miles} miles</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/heart-beat.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.power}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            `)
+        }else{
+                $('#cardResults').append(`
+                <div class="card">
+                <div class="cardImgCntr">
+                    <div class="banner"><p>Sold</p></div>
+                    <img class="cardImg" src=${car.images} alt="${car.name}">
+                    <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
+                        <p>$${car.price}</p>
+                        <div class="flexRow jstfyContSpcBtn">
+                            <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
+                            <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>${car.name}</h3>
+                    <ul>
+                        <li class="flexRow">
+                            <img src="./assets/calendar.png" alt="calendar icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.date}</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/gauge.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.miles} miles</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/heart-beat.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.power}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            `)
+            }
+    
+        })
+    }else{
+        arr.slice(6).forEach(car=>{
+            // console.log(car.name)
+            if(car.sold===false){
+                $('#cardResults').append(`
+                <div class="card">
+                <div class="cardImgCntr">
+                
+                    <img class="cardImg" src=${car.images} alt="${car.name}">
+                    <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
+                        <p>$${car.price}</p>
+                        <div class="flexRow jstfyContSpcBtn">
+                            <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
+                            <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>${car.name}</h3>
+                    <ul>
+                        <li class="flexRow">
+                            <img src="./assets/calendar.png" alt="calendar icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.date}</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/gauge.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.miles} miles</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/heart-beat.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.power}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            `)
+        }else{
+                $('#cardResults').append(`
+                <div class="card">
+                <div class="cardImgCntr">
+                    <div class="banner"><p>Sold</p></div>
+                    <img class="cardImg" src=${car.images} alt="${car.name}">
+                    <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
+                        <p>$${car.price}</p>
+                        <div class="flexRow jstfyContSpcBtn">
+                            <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
+                            <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>${car.name}</h3>
+                    <ul>
+                        <li class="flexRow">
+                            <img src="./assets/calendar.png" alt="calendar icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.date}</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/gauge.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.miles} miles</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/heart-beat.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>${car.power}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            `)
+            }
+    
+        })
+
+    }
+}
+const showSearchInput=()=>{
+    console.log('some')
+    $('#searchInput').toggleClass('searchInputActive')
+    $('#searchParnt').toggleClass('searchParntActive')
+    // $('#searchInput').removeClass('searchInput')
+}
+const showMenu = ()=>{
+    $('#menu').toggleClass('hiddenMenu')
+
 }

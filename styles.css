@@ -33,8 +33,15 @@ img {
 nav {
     background-color: #333333;
     color: #eeeeee;
+    display: flex;
 }
-
+.hamburgerMenu{
+    display: none;
+}
+.hamburgerMenu button {
+    color: white;
+    font-size: 1.5rem;
+}
 /* general rules */
 .wrapper {
     max-width: 1200px;
@@ -76,9 +83,14 @@ nav {
 .navLink{
     color: #eeeeee;
     text-transform: uppercase;
-    font-weight: 700;
-    padding: 10px;
-    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: .9rem;
+    transition: .5s;
+}
+.navLink:hover, .navLink:focus {
+    color: #e63946;
+
 }
 .linkContainer{
     width: 80%;
@@ -98,18 +110,61 @@ nav {
     text-align: center;
 }
 .searchBtn{
-    /* width: 10%; */
     padding: 20px;
     background-color: transparent;
     color: #eeeeee;
-    border: 1px solid #545657 ;
+    border: none;
+    border-left: 1px solid #545657 ;
 }
 .searchCntr{
-    width: 10%;
+    width: 20%;
+    position: relative;
+}
+.searchInput{
+    width: 0;
+    border: none;
+    overflow: hidden;
+    transition: .3s;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #232424;
+    color: white;
+}
+.searchParnt{
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    transition: .3;
+}
+.searchParnt button {
+    width: 30px;
+    height: 30px;
+    background: #232424;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* .searchCntr:hover .searchInput {
+    visibility: visible;
+    width: 100%;
+    overflow: auto;
+} */
+.searchParntActive{
+    visibility: visible;
+    overflow: auto;
+}
+.searchInputActive {
+    width: 250px;
 
 }
-select:invalid { 
-    /* color: gray; */
+.menuCloseBtn{
+    display: none;
 }
 select {
     width: 100%;
@@ -121,6 +176,9 @@ select {
     color: #9b9c9c;
 }
 /* width */
+.w-100{
+    width: 100%;
+}
 .w-45{
     width: 45%;
 }
@@ -134,16 +192,27 @@ select {
     width: 30%;
 }
 /* buttons */
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
 
 .myBtn {
     width: 100%;
     background-color: #e63946;
     color: white;
     padding: 10px 20px;
+    margin: 5px auto;
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: .5s;
 }
+.myBtn:hover, .myBtn:focus {
+    background-color: #fa5e6b;
+}
+
 .sqrBtn{
     width: 30px;
     height: 30px;
@@ -170,8 +239,11 @@ select {
     cursor: pointer;
     transition: .5s;
 }
-.sqrBtn:hover, .sqrBtn:active {
+.sqrBtn:hover, .sqrBtn:focus {
     background-color: #e63947de;
+}
+.sqrBtn2:hover, .sqrBtn2:focus {
+    background-color: #424242de;
 }
 /* others */
 .card {
@@ -273,10 +345,12 @@ header h1 {
     margin: 10px auto;
 }
 /* carResults */
+.results{
+    padding: 50px 0;
+}
 .carResults {
     min-height: 50vh;
 }
-
 .banner{
     /* background-color: #fa726c; */
     border-bottom: 31px solid #fa726c;
@@ -296,7 +370,21 @@ header h1 {
 .banner p {
     margin: 5px;
 }
+.sliders{
+    margin: 20px auto;
+}
+.sliders button {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    color: #9d9d9d;
+    transition: .4s;
+}
+.sliders button:hover, .sliders button:focus {
+    color: #747474;
+    font-weight: bold;
 
+}
 .numbers{
     background-color: #f0f0f0;
     min-height: 20vh;
@@ -321,7 +409,15 @@ header h1 {
     text-transform: uppercase;
     border-radius: 5px;
     margin: 50px auto;
+    transition: .4s;
 }
+.newsSect button:hover, .newsSect button:focus {
+    
+    background-color: #e63946;
+    color: white;
+}
+
+
 
 .carNews {
     width: 60%;
@@ -352,6 +448,9 @@ hr {
     min-height: 40vh;
     color: white;
     padding: 40px 0;
+}
+.contactCols{
+    width: 30%;
 }
 .contact p {
     margin: 10px 0;
@@ -388,9 +487,126 @@ hr {
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    transition: .4s;
+    cursor: pointer;
 }
+.subscribe button:hover, .subscribe button:focus {
+    
+    background-color: #fa5e6b;
+
+}
+
 /* footer */
 footer {
     background-color: #222222;
     padding: 10px;
+    font-size: .8rem;
+    color: #838485;
+}
+
+@media (max-width: 1050px) {
+    .carNews {
+        width: 70%;
+        }
+  }
+@media (max-width: 900px) {
+    .carNews {
+        width: 80%;
+        }
+    }
+@media (max-width: 850px) {
+.carNews {
+    width: 100%;
+    }
+.card {
+    width: 40%;
+}
+.contactCols {
+    width: 45%;
+
+}
+}
+@media (max-width: 800px) {
+    .card {
+        width: 45%;
+    }
+    .contactCols {
+        width: 45%;
+    }
+    .hiddenMenu{
+        display: none;
+    }
+    .menu {
+        /* display: none; */
+        background-color: #333333;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        flex-direction: column;
+        padding: 20px;
+
+    }
+    .navLink {
+        display: block;
+        padding: 20px;
+    }
+    .linkContainer ul{
+        flex-direction: column;
+
+    }
+    .logoSmall {
+        width: 100%;
+    }
+    .searchCntr {
+        width: 100%;
+        text-align: center;
+
+    }
+    .hamburgerMenu{
+        display: block;
+        padding: 20px;
+    }
+    nav {
+        display: flex;
+        justify-content: end;
+    }
+    .searchBtn{
+        border: none; 
+        width: 100%;
+        border-top: 1px solid #545657 ;
+
+    }
+    .menuCloseBtn {
+        display: flex;
+        color: white;
+    }
+    .menuCloseBtn button {
+        color: white;
+        transition: .4s;
+    } 
+    .menuCloseBtn button:hover, .menuCloseBtn button:focus {
+        color: #fa5e6b;
+    }
+}
+@media (max-width: 550px) {
+    .card {
+        width: 80%;
+    }
+    .carNews .card {
+        width: 80%;
+    }
+    .contactCols {
+        width: 75%;
+    }
+    .contactColsCntr {
+        justify-content: center;
+    }
+    .w-45 {
+        width: 80%;
+    }
+    .w-23 {
+        width: 40%;
+        margin: 10px auto;
+    }
 }
