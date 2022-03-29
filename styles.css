@@ -332,6 +332,8 @@ header {
     /* background: red; */
     background: linear-gradient(#0000003d, rgba(0, 0, 0, 0.596)),url(./assets/bmw-x4-xdrive35i.jpg);
     background-size: cover;
+    background-position: center;
+
 }
 .headingCntr {
     color: #eeeeee;

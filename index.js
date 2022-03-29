@@ -124,7 +124,6 @@ let carCopy = [...cars]
 $(document).ready(function(e){
     $('#cardResults').html('')
     renderCars(carCopy, 'firstSix')
-
 })
 const sortby =()=>{
     let type = document.querySelector('#priceRange').value
@@ -325,5 +324,4 @@ const showSearchInput=()=>{
 }
 const showMenu = ()=>{
     $('#menu').toggleClass('hiddenMenu')
-
 }
