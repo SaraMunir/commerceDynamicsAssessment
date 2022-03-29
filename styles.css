@@ -480,6 +480,10 @@ hr {
     align-items: center;
     justify-content: center;
     font-size: .8rem;
+    transition: .4s;
+}
+.socialLinks a:hover, .socialLinks a:focus {
+    background-color: #e63946;
 }
 .subscribe input{
     padding: 10px;
