@@ -360,7 +360,7 @@ header h1 {
     width: 129px;
     position: absolute;
     top: 19px;
-    rotate: -45deg;
+    transform: rotate(-45deg);
     left: -30px;
     display: flex;
     /* align-items: center; */
