@@ -233,10 +233,12 @@ button {
     margin: 0 5px;
     cursor: pointer;
     transition: .5s;
+    padding: 8px;
 }
 .sqrBtn2{
     width: 40px;
     height: 40px;
+    padding: 10px;
     background-color: #e6e6e671;
     border: 1px solid #c9c9c9;
     border-radius: 5px;
@@ -274,11 +276,10 @@ button {
     color: white;
 }
 .sqrBtn img {
-    width: 60%;
+    /* width: 60%; */
     margin: 0 auto;
 }
 .sqrBtn2 img {
-    width: 50%;
     margin: 0 auto;
 }
 .cardImg {
