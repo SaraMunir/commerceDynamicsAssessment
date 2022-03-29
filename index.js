@@ -122,9 +122,26 @@ const cars =[
 ]
 
 $(document).ready(function(e){
-    console.log("hola")
     $('#cardResults').html('')
-    cars.slice(0,6).forEach(car=>{
+    renderCars(cars)
+
+})
+const sortby =()=>{
+    let type = document.querySelector('#priceRange').value
+    // console.log(bbx)
+    if(type==="low-high"){
+            let sortedArr = cars.sort((a,b)=>{ return a.price > b.price ? 1:-1 })
+            $('#cardResults').html('')
+            renderCars(sortedArr)
+            
+        }else{
+            $('#cardResults').html('')
+            let sortedArr =cars.sort((a,b)=>{ return b.price > a.price? 1:-1 })
+            renderCars(sortedArr)
+    }
+}
+const renderCars =(arr)=>{
+    arr.slice(0,6).forEach(car=>{
         // console.log(car.name)
         if(car.sold===false){
             $('#cardResults').append(`
@@ -158,7 +175,7 @@ $(document).ready(function(e){
                     <li class="flexRow">
                         <img src="./assets/heart-beat.png" alt="gauge icon">
                         <div class="flexCol jstfyContCentr">
-                            <p>130 kw (175 hp)</p>
+                            <p>${car.power}</p>
                         </div>
                     </li>
                 </ul>
@@ -197,15 +214,14 @@ $(document).ready(function(e){
                     <li class="flexRow">
                         <img src="./assets/heart-beat.png" alt="gauge icon">
                         <div class="flexCol jstfyContCentr">
-                            <p>130 kw (175 hp)</p>
+                            <p>${car.power}</p>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
         `)
-
         }
 
     })
-})
+}

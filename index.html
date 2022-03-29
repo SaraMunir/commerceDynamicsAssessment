@@ -99,41 +99,110 @@
             </div>
         </form>
     </section>
-    <section class="carResults wrapper flexRow wrap jstfyContSpcBtn" id="cardResults">
-        <div class="card">
-            <div class="cardImgCntr">
-                <div class="banner"><p>sold</p></div>
-                <img class="cardImg" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&fit=crop" alt="car1">
-                <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
-                    <p>$22,000</p>
-                    <div class="flexRow jstfyContSpcBtn">
-                        <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
-                        <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
+    <section >
+        <div class="wrapper flexRow jstfyContEnd alignItmCntr">
+            <button class="sqrBtn2"><img src="./assets/grid.png" alt="star"></button>
+            <button class="sqrBtn2"><img src="./assets/row.png" alt="star"></button>
+            <div>
+                <label class="sr-only" for="priceRange">Price (low-high)</label>
+                <select id="priceRange" onchange="sortby()">
+                    <option value="low-high" selected>Price (low-high)</option>
+                    <option value="high-low">Price (high-low)</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="carResults wrapper flexRow wrap jstfyContSpcBtn" id="cardResults">
+            <div class="card">
+                <div class="cardImgCntr">
+                    <div class="banner"><p>sold</p></div>
+                    <img class="cardImg" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&fit=crop" alt="car1">
+                    <div class="flexRow imgBtnRow jstfyContSpcBtn alignItmCntr">
+                        <p>$22,000</p>
+                        <div class="flexRow jstfyContSpcBtn">
+                            <button class="sqrBtn"><img src="./assets/plus.png" alt="star"></button>
+                            <button class="sqrBtn"><img src="./assets/star.png" alt="star"></button>
+                        </div>
                     </div>
                 </div>
+                <div class="cardText">
+                    <h3>Volkswagen Golf 2.5l</h3>
+                    <ul>
+                        <li class="flexRow">
+                            <img src="./assets/calendar.png" alt="calendar icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>07-2015</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/gauge.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>30,000 miles</p>
+                            </div>
+                        </li>
+                        <li class="flexRow">
+                            <img src="./assets/heart-beat.png" alt="gauge icon">
+                            <div class="flexCol jstfyContCentr">
+                                <p>130 kw (175 hp)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="cardText">
-                <h3>Volkswagen Golf 2.5l</h3>
-                <ul>
-                    <li class="flexRow">
-                        <img src="./assets/calendar.png" alt="calendar icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>07-2015</p>
-                        </div>
-                    </li>
-                    <li class="flexRow">
-                        <img src="./assets/gauge.png" alt="gauge icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>30,000 miles</p>
-                        </div>
-                    </li>
-                    <li class="flexRow">
-                        <img src="./assets/heart-beat.png" alt="gauge icon">
-                        <div class="flexCol jstfyContCentr">
-                            <p>130 kw (175 hp)</p>
-                        </div>
-                    </li>
-                </ul>
+        </div>
+        <div class="wrapper flexRow jstfyContCentr">
+            <button>1</button>
+            <button>2</button>
+            <button>-></button>
+        </div>
+    </section>
+    <section class="numbers flexCol jstfyContCentr">
+        <div class="flexRow wrapper">
+            <div class="w-23">
+                <h2>25</h2>
+                <p>Years In Business</p>
+            </div>
+            <div class="w-23">
+                <h2>1,000+</h2>
+                <p>Cars Sold</p>
+            </div>
+            <div class="w-23">
+                <h2>98%</h2>
+                <p>Customer Satisfaction</p>
+            </div>
+            <div class="w-23">
+                <h2>10,000+</h2>
+                <p>Registered Users</p>
+            </div>
+        </div>
+    </section>
+    <section class="carNews flexRow wrapper">
+        <div class="card">
+            <div class="cardImgCntr">
+                <img class="cardImg" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&fit=crop" alt="car1">
+            </div>
+            <div class="cardText txtCenter">
+                <h3>50 years of pony-car style</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio totam reprehenderit nostrum temporibus magnam et sed, quas alias! Obcaecati id ea harum blanditiis autem nulla illum explicabo repellendus beatae praesentium.</p>
+                <hr>
+                <div class="flexRow alignItmCntr jstfyContCentr">
+                    <img class="authorImg" src="https://this-person-does-not-exist.com/img/avatar-a85cf91968b507d6eb1343be9b2db8b8.jpg" alt="authors image">
+                    <p> by John Doe</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="cardImgCntr">
+                <img class="cardImg" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&fit=crop" alt="car1">
+            </div>
+            <div class="cardText txtCenter">
+                <h3>50 years of pony-car style</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio totam reprehenderit nostrum temporibus magnam et sed, quas alias! Obcaecati id ea harum blanditiis autem nulla illum explicabo repellendus beatae praesentium.</p>
+                <hr>
+                <div class="flexRow alignItmCntr jstfyContCentr">
+                    <img class="authorImg" src="https://this-person-does-not-exist.com/img/avatar-a85cf91968b507d6eb1343be9b2db8b8.jpg" alt="authors image">
+                    <p> by John Doe</p>
+                </div>
             </div>
         </div>
 
