@@ -1,0 +1,245 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+body {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    color: #42484b;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+/* #e63946 */
+/* #fa726c */
+/* #333333 */
+/* #eeeeee */
+nav {
+    background-color: #333333;
+    color: #eeeeee;
+}
+
+/* general rules */
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.flexCol{
+    display: flex;
+    flex-direction: column;
+}
+.alignItmCntr {
+    align-items: center;
+}
+.jstfyContEnd{
+    justify-content: end;
+}
+.jstfyContSpcBtn{
+    justify-content: space-between;
+}
+.jstfyContCentr{
+    justify-content: center;
+}
+/* navigation  */
+/* #9a9a9a
+ */
+.navLink{
+    color: #eeeeee;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    font-size: 1rem;
+}
+.linkContainer{
+    width: 80%;
+}
+.logoSmall{
+    padding: 10px;
+    font-size: 2rem; 
+    font-weight: 400;
+    margin: 0;
+    width: 10%;
+}
+.login{
+    display: inline-block;
+    width: 100px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+}
+.searchBtn{
+    /* width: 10%; */
+    padding: 20px;
+    background-color: transparent;
+    color: #eeeeee;
+    border: 1px solid #545657 ;
+}
+.searchCntr{
+    width: 10%;
+
+}
+select:invalid { 
+    /* color: gray; */
+}
+select {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #d6d6d6;
+    padding: 10px 20px;
+    margin: 5px auto;
+    border-radius: 5px;
+    color: #9b9c9c;
+}
+/* width */
+.w-45{
+    width: 45%;
+}
+/* buttons */
+
+.myBtn {
+    width: 100%;
+    background-color: #e63946;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.sqrBtn{
+    width: 30px;
+    height: 30px;
+    background-color: #e6e6e671;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+.sqrBtn:hover, .sqrBtn:active {
+    background-color: #e63947de;
+}
+/* others */
+.card {
+    width: 30%;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: 0px 2px 1px rgba(138, 138, 138, 0.493);
+    
+}
+.cardImgCntr {
+    position: relative;
+}
+.imgBtnRow{
+    width: 90%;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+.imgBtnRow p{
+    color: white;
+}
+.sqrBtn img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.cardImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+/* .card {
+    width: 15%;
+} */
+.card p {
+    margin: 0;
+    /* margin-left: 15px; */
+}
+.card li {
+    margin: 5px 0;
+}
+.card li img{
+    width: 20px;
+    margin-right: 20px;
+}
+.cardText{
+    padding: 10px;
+}
+/* header */
+header {
+    width: 100%;
+    height: 60vh;
+    /* background: red; */
+    background: linear-gradient(#0000003d, rgba(0, 0, 0, 0.596)),url(./assets/bmw-x4-xdrive35i.jpg);
+    background-size: cover;
+}
+.headingCntr {
+    color: #eeeeee;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 10px 40px;
+}
+header h1 {
+    margin: 10px 0;
+}
+.headingCntr span {
+    font-weight: 700;
+}
+
+/* filterOptions */
+.filterOptions{
+    min-height: 40vh;
+}
+.filterOptions div {
+    margin: 10px auto;
+}
+/* carResults */
+.carResults {
+    min-height: 50vh;
+}
+
+.banner{
+    /* background-color: #fa726c; */
+    border-bottom: 31px solid #fa726c;
+    border-left: 31px solid transparent;
+    border-right: 32px solid transparent;
+    height: 0;
+    width: 129px;
+    position: absolute;
+    top: 19px;
+    rotate: -45deg;
+    left: -30px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: white;
+}
+.banner p {
+    margin: 5px;
+}
